@@ -1,0 +1,12 @@
+git+https://fabdistribdeploy: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@github.com/Fab-Inc/fabgis_appbuild_0000.git@main#egg=fabgis
+git+https://fabdistribdeploy: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@github.com/Fab-Inc/fabmatch_appbuild_0000.git@main#egg=fabmatch
+git+https://ogutilsdeploy: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@github.com/Fab-Inc/ogutils.git@v0.0.4#egg=ogutils
+streamlit
+numpy
+pandas
+matplotlib
+pyyaml
+scipy
+h5py
+pillow
+boto3
