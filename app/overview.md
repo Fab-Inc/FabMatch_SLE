@@ -1,0 +1,3 @@
+An application for matching new teachers with schools based on a flexible generalisation of the gale-shapely assignment algorithm (first decribed here: https://doi.org/10.2307/2312726).
+
+The application aims to provide users with a simple framework for configuring, running, and evaluating teacher assignments according to their needs by combining a limited set of controlling principles with the data provided for each school and teacher.

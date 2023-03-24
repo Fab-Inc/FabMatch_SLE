@@ -1,0 +1,18 @@
+displaykey:
+  Schools:
+    teachtot: Total teachers
+    puptot: Total pupils
+    owner: School owner
+    appr: Approved school
+  Teachers:
+    gender: Gender
+    years: Service years
+    qual: Teaching qualification
+    salsrc: Salary source
+  both:
+    schoolid: School ID
+    type: School type
+    district: District
+    chiefdom: Chiefdom
+    lat: Latitude
+    lon: Longitude    

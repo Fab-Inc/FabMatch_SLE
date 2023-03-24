@@ -1,0 +1,243 @@
+# Home
+run_match:
+  >-
+  Run the matching algorithm with the current import data and match settings.
+
+
+  Depending on the size of the data and the choice of settings this may take some time.
+  A progress bar will be displayed below.
+reset_match:
+  >-
+  Reset all match results but keep the existing imported data and match settings.
+
+
+  Running match again after resetting will produce identical results if the import
+  data and match settings are not changed.
+generate_project_data:
+  >-
+  Package all of the current import data and match settings into a project file
+  which you can then save to your computer.
+  
+
+  Import data is saved in its raw form (i.e. prior to any column selection and filters)
+  so this file could be quite large if the import data contains many extra columns or
+  rows, even if only a small number of the them are used for the match.
+
+# Import Data
+read_columns:
+  >-
+  Load the raw school or teacher data and read the column names.
+
+
+  After this you will receive a list of options to select the columns that you want to import
+  into the formatted data to use for matching.
+import:
+  >-
+  Import the columns selected above into the formatted data to use for matching.
+
+
+  If you decide to change any of the column selections you must run this again for the changes
+  to take effect.
+reset_data:
+  >-
+  Clear the formatted data to use for matching.
+
+
+  Column selections and filter options will be preserved and can be re-applied by re-running
+  "Import" and "Apply Options" buttons respectively.
+add_filter:
+  >-
+  Add the current filter to the list of filters.
+apply_options:
+  >-
+  Apply all filters in the filter list to the formatted data to use for matching.
+
+
+  It is important to note that filters applied here will apply to all stages of the program,
+  including any before/after comparisons on the match results. It is not recommended to filter
+  out "Government" paid teachers at this stage, as all subsequent before/after comparisons
+  expect to find "Government" teachers in the data prior to the match. This particular filter
+  could be safely applied in the Match Settings instead.
+# School Columns
+total_teachers:
+  >-
+  The total number of teachers currently on payroll at the school.
+total_pupils:
+  >-
+  The total number of pupils currently at the school.
+school_owner:
+  >-
+  The owner of the school.
+approved_school:
+  >-
+  The approval status of the school.
+# Teacher Columns
+gender:
+  >-
+  The teacher's gender.
+service_years:
+  >-
+  How many years the teacher has been in service.
+teaching_qualifications:
+  >-
+  The teacher's qualification.
+salary_source:
+  >-
+  The source of the teacher's salary (e.g. Government).
+# Shared Columns
+school_id:
+  >-
+  The ID code of the school.
+
+
+  If in the schools tab this corresponds to the school itself, if in the teachers tab this
+  corresponds to the school that the teacher is currently working at.
+school_type:
+  >-
+  The type of the school (e.g. Primary, Junior Secondary, etc.).
+
+
+  If in the schools tab this corresponds to the school itself, if in the teachers tab this
+  corresponds to the school that the teacher is currently working at.
+district:
+  >-
+  The district of the school.
+
+
+  If in the schools tab this corresponds to the school itself, if in the teachers tab this
+  corresponds to the school that the teacher is currently working at.
+chiefdom:
+  >-
+  The chiefdom of the school.
+
+
+  If in the schools tab this corresponds to the school itself, if in the teachers tab this
+  corresponds to the school that the teacher is currently working at.
+latitude:
+  >-
+  The latitude of the school.
+
+
+  If in the schools tab this corresponds to the school itself, if in the teachers tab this
+  corresponds to the school that the teacher is currently working at.
+longitude:
+  >-
+  The longitude of the school.
+
+
+  If in the schools tab this corresponds to the school itself, if in the teachers tab this
+  corresponds to the school that the teacher is currently working at.
+# Extra Columns
+extracols:
+  >-
+  Add any additional columns thast you would like to import here.
+
+# Filter interface
+remove:
+  >-
+  Remove this filter from the list.
+
+# Data selector interface
+attribute:
+  >-
+  Data selector appearing in multiple different contexts throughout the app.
+  Depending on the context, allows you to choose the attribute of the data to use
+  either for filtering, setting rules, setting preferences, or setting tiebeaks.
+
+
+  Once selected, a secondary menu will be available to specify additional properties of
+  the attribute. This could be a set or a range of values to filter by (in the context of a
+  filter or rule) or a set of values to assign scores to (in the context of a preference or
+  tiebreak).
+invert_selection:
+  >-
+  Check this box if you want the selected set of values to be filtered OUT of the data rather
+  than filtered IN, which is the default.
+
+# Match Settings
+use_advanced_settings:
+  >-
+  Check this box for more flexible control over the match settings. Here you can set rules,
+  preferences, and tiebreaks based on any attributes of the schools or teachers data not
+  listed above, as well as customise their order of precedence.
+simple_WBrule_district:
+  >-
+  The need for each district will be calculated based on the average number of teachers required
+  for each school in the district to match the national average pupil-teacher ratio. Districts with
+  higher need will be assigned a greater share of teachers out of the total cap, the share proportional 
+  to their need.
+simple_WBrule_type:
+  >-
+  School types (e.g. Primary, Junior Secondary, etc.) with a greater number of pupils will be assigned
+  a greater share of teachers out of the total cap, the share proportional to their number of pupils.
+simple_limit:
+  >-
+  Set limits for which teachers can be matched with which schools based on the curent school that the teacher
+  works at. You can choose from 2 options: limit the match to the same school that the teacher curently works at, or
+  limit the match to a school of the same type and within a given distance of the school that the teacher
+  currently works at.
+
+
+  If no limit is set then any teacher could potentially be matched with any school. If you want to set a limit
+  that is not listed here then you can use "Valid Pairs" in Advanced Settings to set a different one (e.g. limit
+  match to same district or same chiefdom, etc.)
+simple_limit_radius:
+  >-
+simple_limit_sameschl:
+  >-
+simple_salsrc:
+  >-
+  Filter out all teachers whose salary source == "Government".
+  
+  
+  If this exact label doesn't exist in your schools data, you will need to set this filter
+  manually as a rule in Advanced Settings.
+simple_qual:
+  >-
+  Prefer teachers with a higher qualification before all others.
+
+
+  After you check this box you can set the order of qualifications below (top of the list is the
+  most preferred)
+simple_gender:
+  >-
+  If qualifications are equal (or qualification preference is not set), prefer teachers by their
+  gender.
+
+
+  After you check this box you can set the order of gender below (top of the list is the
+  most preferred)
+simple_years:
+  >-
+  If qualifications and gender are equal (or their preference is not set), prefer teachers by their
+  years of experience (more years are most preferred).
+total_cap:
+  >-
+  Total number of positions to be allocated over all schools.
+use_district_constraints:
+  >-
+  If checked, distribute the total cap amongst districts by the percentages given in the
+  sliders.
+  
+  This is offered as a convenient alternative to setting a district rule using the more
+  flexible but less convenient rules interface below.
+use_school_type_constraints:
+  >-
+  If checked, distribute the total cap amongst school types by the percentages given in the
+  sliders.
+  
+  
+  This is offered as a convenient alternative to setting a school types rule using the more
+  flexible but less convenient rules interface below.
+use_preset_function:
+  >-
+  Check here to override any rules with a preset rule function.
+filter_pref:
+  >-
+normalize:
+  >-
+  Click to normalize the entered values so that they add up to 100%.
+
+
+  If the values entered here are not normalized before performing the match the resulting 
+  proportions will be normalized automatically by the algorithm when you click "Run Match".

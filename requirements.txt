@@ -1,0 +1,13 @@
+git+https://github.com/Fab-Inc/fabgis_appbuild_0000.git@main#egg=fabgis
+git+https://github.com/Fab-Inc/fabmatch_appbuild_0000.git@main#egg=fabmatch
+git+https://github.com/Fab-Inc/ogutils.git@v0.0.4#egg=ogutils
+streamlit >= 1.15, < 1.18
+numpy
+pandas
+matplotlib
+pyyaml
+scipy == 1.9.*
+h5py
+pillow
+boto3
+plotly
